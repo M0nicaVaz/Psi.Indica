@@ -5,11 +5,15 @@
   --clr-yellow: #fffb8c;
   --clr-pink: #ffd0bf;
   --clr-gray: #f1f1f1;
+
+  --btn-transform: translateY(-5px) translateX(-5px);
+  --btn-transition: ease-in-out 0.3s;
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   background: linear-gradient(1deg, #99ffea 0%, #512260 100%);
@@ -34,7 +38,7 @@ input {
   border-radius: 6px;
   border: none;
   padding: 6px;
-  background-color: #ffd0bf7c;
+  background-color: #50226023;
   margin-bottom: 15px;
   text-align: center;
 }
@@ -51,11 +55,7 @@ input::placeholder {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
   min-height: 100vh;
-}
-.logo {
-  width: 100px;
 }
 .nav-links {
   margin-right: 1rem;
@@ -70,8 +70,8 @@ input::placeholder {
   color: var(--clr-yellow);
 }
 .link:hover {
-  transform: translateY(-5px) translateX(-5px);
-  transition: ease-in-out 0.3s;
+  transform: var(--btn-transform);
+  transition: var(--btn-transition);
 }
 .link::after {
   content: '';
@@ -80,13 +80,12 @@ input::placeholder {
   height: 3px;
   border-radius: 6px;
   background-color: var(--clr-teal);
-  transform: translateY(-5px) translateX(-5px);
-  transition: ease-in-out 0.3s;
+  transform: var(--btn-transform);
+  transition: var(--btn-transition);
   display: block;
   margin-top: 5px;
   margin-left: 5px;
 }
-
 .link:hover::after {
   opacity: 1;
   transition: ease-in-out 0.3s;
@@ -100,12 +99,28 @@ input::placeholder {
   width: 80%;
   font-size: 1.1rem;
 }
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  align-items: center;
+  gap: 4rem;
+}
+.logo {
+  width: 280px;
+}
+.infoBox {
+  width: 50%;
+}
 .staff {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
 .cards {
+  position: relative;
   margin: auto;
   padding: 2rem;
   display: flex;
@@ -115,15 +130,35 @@ input::placeholder {
   gap: 0.5rem;
   min-width: 90vw;
 }
-.card {
+.flipCard {
+  transform-style: preserve-3d;
   border-radius: 10px;
   width: 20rem;
   height: 27rem;
-  background-color: #caa6ff38;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
 }
-.card:hover {
-  transform: rotateY(170deg);
-  transition: ease-in-out 0.3s;
+.flipCard:hover {
+  transform: rotateY(180deg);
+}
+.frontCard {
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #caa6ff38;
+  color: #333;
+}
+.backCard {
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: var(--clr-teal);
+  color: #333;
+  transform: rotateY(180deg);
 }
 .card-img {
   border-radius: 4px;
@@ -138,11 +173,12 @@ input::placeholder {
   color: black;
 }
 .contact {
-  width: 40%;
+  width: 50%;
   font-size: 14px;
 }
 .input-area {
-  background-color: #f1f1f12d;
+  margin-top: 10px;
+  background-color: #ffd0bf2f;
   display: flex;
   flex-direction: column;
   border: 2px solid var(--clr-main-purple);
@@ -152,28 +188,26 @@ input::placeholder {
   font-weight: 600;
   font-size: 20px;
 }
-.input-area legend {
-  font-size: 16px;
-  color: #fffb8c;
-}
 .msg-input {
   width: 100%;
   height: 150px;
   margin-bottom: 20px;
-  background-color: #ffd0bf7c;
+  background-color: #50226023;
   border: none;
 }
 .send-btn {
   cursor: pointer;
-  background-color: var(--clr-teal);
-  color: var(--clr-main-purple);
+  background-color: var(--clr-main-purple);
+  color: var(--clr-teal);
   width: 30%;
   padding: 15px;
   margin: auto;
 }
 .send-btn:hover {
-  background-color: var(--clr-main-purple);
-  color: var(--clr-teal);
+  transform: var(--btn-transform);
+  transition: var(--btn-transition);
+  background-color: var(--clr-teal);
+  color: var(--clr-main-purple);
 }
 .footer-wrapper {
   position: relative;
@@ -187,4 +221,24 @@ input::placeholder {
   font-weight: 100;
   font-size: 12px;
   color: black;
+}
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .container {
+    margin-top: 3vh;
+  }
+  .logo {
+    width: 220px;
+  }
+  .infoBox {
+    width: 90%;
+  }
+  .contact {
+    width: 75%;
+  }
 }
