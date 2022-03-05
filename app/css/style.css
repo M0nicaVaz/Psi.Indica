@@ -295,8 +295,8 @@ header {
 }
 @media screen and (max-width: 480px) {
   body {
-    min-width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
   }
   h1 {
     font-size: 1.5rem;
@@ -307,15 +307,11 @@ header {
   input {
     padding: 9px;
   }
+  .page-wrapper {
+    gap: 5rem;
+  }
   .container {
     margin-top: 0vh;
-  }
-  .contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 14px;
   }
   .logo {
     width: 220px;
@@ -323,8 +319,12 @@ header {
   .infoBox {
     width: 100%;
   }
+  .infoBox p {
+    width: 80%;
+    margin: auto;
+  }
   .close {
-    margin-top: 5vh;
+    margin-top: 0vh;
   }
   .modal h2 {
     font-size: 18px;
