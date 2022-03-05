@@ -96,7 +96,7 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 100vh;
   gap: 2rem;
 }
@@ -304,8 +304,18 @@ header {
   h2 {
     font-size: 1.4rem;
   }
+  input {
+    padding: 9px;
+  }
   .container {
-    margin-top: 3vh;
+    margin-top: 0vh;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
   }
   .logo {
     width: 220px;
@@ -314,7 +324,7 @@ header {
     width: 100%;
   }
   .close {
-    margin-top: 20px;
+    margin-top: 5vh;
   }
   .modal h2 {
     font-size: 18px;
