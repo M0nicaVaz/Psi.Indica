@@ -1,4 +1,3 @@
-let logo = document.querySelector('.logo');
 let openModal = document.querySelector('#open-modal');
 let cardDanilo = document.querySelectorAll('.flipCard')[0];
 let cardManu = document.querySelectorAll('.flipCard')[1];
@@ -6,13 +5,6 @@ let cardMonica = document.querySelectorAll('.flipCard')[2];
 let cardMonise = document.querySelectorAll('.flipCard')[3];
 
 let modalClosed = true;
-
-logo.addEventListener('mouseover', () => {
-  logo.src = './Imagens/logo2.png';
-});
-logo.addEventListener('mouseout', () => {
-  logo.src = './Imagens/logo.png';
-});
 
 openModal.addEventListener('click', () => {
   let modal = document.querySelector('.modal');

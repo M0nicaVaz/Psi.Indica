@@ -1,15 +1,13 @@
 :root {
   --clr-main-purple: #512260;
-  --clr-lignt-purple: #c9a6ff;
   --clr-teal: #99ffea;
   --clr-yellow: #fffb8c;
   --clr-pink: #ffd0bf;
-  --clr-gray: #f1f1f1;
-
-  --btn-transform: translateY(-5px) translateX(-5px);
-  --btn-transition: ease-in-out 0.3s;
+  --btn-transition: ease 0.3s;
 }
-* {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -18,11 +16,8 @@
 body {
   background: linear-gradient(1deg, #99ffea 0%, #512260 100%);
   background-attachment: fixed;
-  font-family: 'Zen Kaku Gothic Antique';
+  font-family: 'Zen Kaku Gothic Antique', monospace;
   overflow: auto;
-}
-header {
-  width: 90vw;
 }
 ul {
   list-style: none;
@@ -33,6 +28,7 @@ a {
 h1,
 h2 {
   color: var(--clr-yellow);
+  font-family: 'Zen Kurenaido', monospace;
 }
 input {
   border-radius: 6px;
@@ -49,6 +45,9 @@ label {
 input::placeholder {
   text-align: center;
 }
+header {
+  width: 90%;
+}
 .page-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -59,9 +58,8 @@ input::placeholder {
   min-height: 100vh;
 }
 .nav-links {
-  margin-right: 1rem;
   margin-top: 18px;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -71,7 +69,7 @@ input::placeholder {
   color: var(--clr-yellow);
 }
 .link:hover {
-  transform: var(--btn-transform);
+  transform: translateY(-5px) translateX(-5px);
   transition: var(--btn-transition);
 }
 .link::after {
@@ -81,11 +79,8 @@ input::placeholder {
   height: 3px;
   border-radius: 6px;
   background-color: var(--clr-teal);
-  transform: var(--btn-transform);
   transition: var(--btn-transition);
   display: block;
-  margin-top: 5px;
-  margin-left: 5px;
 }
 .link:hover::after {
   opacity: 1;
@@ -94,27 +89,37 @@ input::placeholder {
 .container {
   justify-content: center;
   text-align: center;
-  margin-top: 10vh;
-}
-.container:nth-child(2) {
-  color: var(--clr-gray);
-  width: 80%;
-  font-size: 1.1rem;
 }
 .about {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: relative;
-  width: 90%;
   align-items: center;
-  gap: 4rem;
+  width: 100%;
+  height: 100vh;
+  gap: 2rem;
 }
 .logo {
-  width: 280px;
+  width: 320px;
 }
 .infoBox {
   width: 50%;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 420px;
+  gap: 2rem;
+  height: 50vh;
+}
+.infoBox-link {
+  color: var(--clr-main-purple);
+  font-size: 16px;
+  font-weight: 600;
+}
+.infoBox-link:hover {
+  transform: scale(1.05);
 }
 .staff {
   display: flex;
@@ -123,14 +128,11 @@ input::placeholder {
 }
 .cards {
   position: relative;
-  margin: auto;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  flex: 1;
-  gap: 0.7rem;
-  min-width: 90vw;
+  gap: 1rem;
 }
 .flipCard {
   transform-style: preserve-3d;
@@ -179,12 +181,6 @@ input::placeholder {
   height: 180px;
   margin: 10px;
 }
-.description {
-  margin-top: 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
 .front {
   width: 85%;
   align-self: center;
@@ -194,12 +190,12 @@ input::placeholder {
   align-self: center;
 }
 .btn-social {
-  transform: scale(1.5);
+  transform: scale(1.8);
   color: var(--clr-main-purple);
   margin-top: 15px;
 }
 .btn-social:hover {
-  transform: scale(1.75);
+  transform: scale(1.9);
 }
 .rotate {
   transform: scale(1.2);
@@ -207,51 +203,6 @@ input::placeholder {
   align-self: flex-end;
   right: 15px;
   top: 10px;
-}
-.btn {
-  color: var(--clr-yellow);
-  background-color: var(--clr-main-purple);
-  width: 40%;
-  padding: 6px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  align-self: center;
-  margin-top: 15px;
-}
-.btn:hover {
-  transform: scale(1.05);
-}
-.more-info {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  text-align: center;
-  top: 40vh;
-  height: 100vh;
-  background: linear-gradient(1deg, #99ffea 0%, #512260 100%);
-  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  width: 90%;
-}
-#closeBtn {
-  cursor: pointer;
-  scale: (2);
-}
-.more-info p {
-  width: 80%;
-  margin: auto;
-  margin-top: 20px;
-}
-.more-info span {
-  align-self: center;
-  margin-top: 20px;
-}
-.more-info p {
-  width: 80%;
-  margin: auto;
-  margin-top: 20px;
 }
 .footer-wrapper {
   position: relative;
@@ -262,14 +213,14 @@ input::placeholder {
   text-align: center;
 }
 .footer-wrapper a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Zen Kurenaido', monospace;
   font-weight: 100;
-  font-size: 12px;
+  font-size: 14px;
   color: black;
+  height: 50px;
 }
 .modal {
   position: fixed;
-  background-color: inherit;
   width: 100%;
   height: 100%;
 }
@@ -278,10 +229,9 @@ input::placeholder {
   background: #502260e0;
   position: absolute;
   width: inherit;
-  height: 100vh;
+  height: 100%;
   z-index: -1000;
   top: 0;
-  margin-left: 0;
 }
 .contact {
   display: flex;
@@ -289,8 +239,8 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
   font-size: 14px;
-  align-items: center;
 }
 .close {
   transform: scale(2.5);
@@ -298,7 +248,6 @@ input::placeholder {
   cursor: pointer;
   align-self: center;
   margin-bottom: 20px;
-  margin-top: -10px;
 }
 .close:hover {
   color: var(--clr-pink);
@@ -310,7 +259,7 @@ input::placeholder {
   justify-content: space-evenly;
   margin-top: 10px;
   background-color: var(--clr-teal);
-  border: 2px solid var(--clr-main-purple);
+  border: none;
   padding: 15px;
   border-radius: 10px;
   color: black;
@@ -335,10 +284,8 @@ input::placeholder {
   margin: auto;
 }
 .send-btn:hover {
-  transform: var(--btn-transform);
+  color: var(--clr-pink);
   transition: var(--btn-transition);
-  background-color: var(--clr-teal);
-  color: var(--clr-main-purple);
 }
 .hidden {
   display: none;
@@ -347,6 +294,10 @@ input::placeholder {
   display: block;
 }
 @media screen and (max-width: 480px) {
+  body {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
   h1 {
     font-size: 1.5rem;
   }
@@ -360,7 +311,7 @@ input::placeholder {
     width: 220px;
   }
   .infoBox {
-    width: 90%;
+    width: 100%;
   }
   .close {
     margin-top: 20px;
