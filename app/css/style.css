@@ -350,6 +350,9 @@ header {
   .close {
     margin-top: 0vh;
   }
+  .modal {
+    flex-wrap: nowrap;
+  }
   .modal h2 {
     font-size: 18px;
   }
