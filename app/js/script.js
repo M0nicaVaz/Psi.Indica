@@ -27,6 +27,12 @@ openModal.addEventListener('click', () => {
   }
 });
 
-function flip() {}
+// if (window.matchMedia('(max-width: 480px)').matches) {
+//   let inputArea = document.querySelector('.input-area');
+//   let modalContainer = document.querySelector('#contact');
 
-cardDanilo.addEventListener('click', () => {});
+//   inputArea.addEventListener('click', () => {
+//     h2.classList.toggle('hidden');
+//     close.classList.toggle('hidden');
+//   });
+// }
