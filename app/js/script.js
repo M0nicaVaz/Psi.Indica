@@ -36,3 +36,5 @@ openModal.addEventListener('click', () => {
 });
 
 function flip() {}
+
+cardDanilo.addEventListener('click', () => {});

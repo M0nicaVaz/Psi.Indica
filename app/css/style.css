@@ -362,7 +362,13 @@ input::placeholder {
   .infoBox {
     width: 90%;
   }
-  .contact {
-    width: 75%;
+  .close {
+    margin-top: 20px;
+  }
+  .modal h2 {
+    font-size: 18px;
+  }
+  .input-area {
+    width: 300px;
   }
 }
