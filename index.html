@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
     <script
-      src="https://kit.fontawesome.com/9998463f15.js"
+      src="https://kit.fontawesome.com/abed438bf5.js"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -25,7 +25,7 @@
           <ul class="nav-links">
             <a href="#about"><li class="link">SOBRE</li></a>
             <a href="#staff"><li class="link">QUEM SOMOS</li></a>
-            <a href="#contact"><li class="link">CONTATO</li></a>
+            <a href="#contact" id="open-modal"><li class="link">CONTATO</li></a>
           </ul>
         </nav>
       </header>
@@ -53,6 +53,7 @@
         <div id="about" class="cards container">
           <div class="flipCard">
             <div class="frontCard">
+              <i class="fa-solid fa-rotate rotate"></i>
               <h3>Danilo Xavier</h3>
               <img class="card-img" src="/Imagens/Danilo.PNG" />
               <span> CRP 03/13743</span>
@@ -70,12 +71,12 @@
               </p>
               <a href="#"><i class="fa-brands fa-instagram btn-social"></i></a>
               <a href=""><i class="fa-brands fa-whatsapp btn-social"></i></a>
-              <button class="btn">Saber Mais</button>
             </div>
           </div>
 
           <div class="flipCard">
             <div class="frontCard">
+              <i class="fa-solid fa-rotate rotate"></i>
               <h3>Emanoela Dantas</h3>
               <img class="card-img" src="/Imagens/Emanoela.PNG" />
               <span> CRP 03/13803</span>
@@ -94,12 +95,12 @@
               </p>
               <a href="#"><i class="fa-brands fa-instagram btn-social"></i></a>
               <a href=""><i class="fa-brands fa-whatsapp btn-social"></i></a>
-              <button class="btn">Saber Mais</button>
             </div>
           </div>
 
           <div class="flipCard">
             <div class="frontCard">
+              <i class="fa-solid fa-rotate rotate"></i>
               <h3>Monica Vaz</h3>
               <img class="card-img" src="/Imagens/Monica.PNG" />
               <span> CRP 03/13741</span>
@@ -118,12 +119,12 @@
               </p>
               <a href="#"><i class="fa-brands fa-instagram btn-social"></i></a>
               <a href=""><i class="fa-brands fa-whatsapp btn-social"></i></a>
-              <button class="btn">Saber Mais</button>
             </div>
           </div>
 
           <div class="flipCard">
             <div class="frontCard">
+              <i class="fa-solid fa-rotate rotate"></i>
               <h3>Monise Carvalho</h3>
               <img class="card-img" src="/Imagens/Monise.PNG" />
               <span> CRP 03/1370</span>
@@ -143,56 +144,45 @@
               </p>
               <a href="#"><i class="fa-brands fa-instagram btn-social"></i></a>
               <a href=""><i class="fa-brands fa-whatsapp btn-social"></i></a>
-              <button class="btn" id="moniseBtn">Saber Mais</button>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="more-info hidden" id="aboutMonise">
-        <div class="info-wrapper">
-          <h3>Monise Carvalho</h3>
-          <img class="card-img" src="/Imagens/Monise.PNG" />
-          <span> CRP 03/1370</span>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Repudiandae ut ea odio accusamus ipsam quo, eius assumenda quis,
-            eligendi facere fugit sed? Laborum animi, sunt nostrum tempora esse
-            vel explicabo beatae, ut quidem velit expedita? Adipisci velit vel
-            atque, magni ab error? Maxime qui tempora ex, quibusdam nihil nam
-            recusandae officia tempore doloremque eum? Voluptatibus eum debitis
-            consequuntur praesentium excepturi deleniti dolorum rerum, eveniet
-            accusantium molestiae nisi, culpa aliquid eos id tempora delectus,
-            hic ad earum. Aperiam facere laboriosam odio, ratione officiis
-            molestiae similique fugiat, earum sit, fugit quis incidunt.
-          </p>
-          <i class="fa-solid fa-xmark" id="closeBtn"></i>
+      <div class="modal hidden">
+        <div id="contact" class="contact container">
+          <i class="fa-regular fa-circle-xmark close"></i>
+          <h2>Entre em contato com a gente:</h2>
+          <form action="" method="get">
+            <fieldset class="input-area">
+              <label for="name">Nome:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Como devemos te chamar?"
+                required
+              />
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" required />
+              <label for="instagram">Instagram:</label>
+              <input
+                type="text"
+                name="instagram"
+                id="instagram"
+                placeholder="@"
+                required
+              />
+              <label for="msg">Deixe sua mensagem:</label>
+              <textarea class="msg-input" id="msg" name="msg"></textarea>
+              <input type="submit" value="Enviar" id="send" class="send-btn" />
+            </fieldset>
+          </form>
         </div>
-      </section>
-
-      <div id="contact" class="contact container">
-        <h2>Entre em contato com a gente:</h2>
-        <form action="" method="get">
-          <fieldset class="input-area">
-            <label for="name">Nome:</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Como devemos te chamar?"
-              required
-            />
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required />
-            <label for="msg">Deixe sua mensagem:</label>
-            <textarea class="msg-input" id="msg" name="msg"></textarea>
-            <input type="submit" value="Enviar" id="send" class="send-btn" />
-          </fieldset>
-        </form>
       </div>
 
       <footer class="footer-wrapper">
-        <a href="https://github.io/M0nicaVaz">Dev</a>
+        <a href="https://github.com/M0nicaVaz">Dev</a>
       </footer>
     </div>
 
