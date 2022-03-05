@@ -294,8 +294,8 @@ header {
 }
 @media screen and (max-width: 480px) {
   body {
-    width: 100vw;
-    height: 100vh;
+    width: 120vw;
+    height: 120vh;
     background-size: cover;
   }
   h1 {
