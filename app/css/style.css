@@ -149,10 +149,10 @@ header {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.flipCard:hover {
+/* .flipCard:hover {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
-}
+} */
 .flipCard h3 {
   margin: 15px 0 15px 0;
 }
@@ -227,6 +227,7 @@ header {
   align-self: flex-end;
   right: 15px;
   top: 10px;
+  cursor: pointer;
 }
 .footer-wrapper {
   position: relative;

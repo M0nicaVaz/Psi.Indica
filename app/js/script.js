@@ -1,8 +1,5 @@
 let openModal = document.querySelector('#open-modal');
-let cardDanilo = document.querySelectorAll('.flipCard')[0];
-let cardManu = document.querySelectorAll('.flipCard')[1];
-let cardMonica = document.querySelectorAll('.flipCard')[2];
-let cardMonise = document.querySelectorAll('.flipCard')[3];
+let cards = document.querySelectorAll('.flipCard');
 
 let modalClosed = true;
 
@@ -27,12 +24,14 @@ openModal.addEventListener('click', () => {
   }
 });
 
-// if (window.matchMedia('(max-width: 480px)').matches) {
-//   let inputArea = document.querySelector('.input-area');
-//   let modalContainer = document.querySelector('#contact');
+for (var i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('click', (e) => {
+    let flipCard = e.target.parentElement.parentElement;
 
-//   inputArea.addEventListener('click', () => {
-//     h2.classList.toggle('hidden');
-//     close.classList.toggle('hidden');
-//   });
-// }
+    if (e.target.classList.contains('frontR')) {
+      flipCard.style.transform = 'rotateY(180deg)';
+    } else if (e.target.classList.contains('backR')) {
+      flipCard.style.transform = 'rotateY(0deg)';
+    }
+  });
+}
