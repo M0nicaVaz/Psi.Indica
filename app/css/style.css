@@ -348,6 +348,13 @@ header {
     width: 80%;
     margin: auto;
   }
+  .rotate {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    top: 20px;
+    right: 20px;
+    color: var(--clr-main-purple);
+  }
   .close {
     margin-top: 0vh;
   }
@@ -359,5 +366,13 @@ header {
   }
   .input-area {
     width: 300px;
+  }
+}
+@media screen and (max-height: 542px) {
+  h2 {
+    display: none;
+  }
+  .close {
+    display: none;
   }
 }
