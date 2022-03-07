@@ -50,9 +50,8 @@ header {
 }
 .page-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column nowrap;
   gap: 2rem;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
@@ -88,7 +87,7 @@ header {
 }
 .container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   text-align: center;
 }
@@ -109,6 +108,7 @@ header {
   width: 50%;
   font-size: 1em;
   line-height: 2rem;
+  font-weight: 900;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,6 +134,7 @@ header {
   line-height: 1.7rem;
   padding: 2rem;
   display: flex;
+  columns: 2;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -149,10 +150,6 @@ header {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-/* .flipCard:hover {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-} */
 .flipCard h3 {
   margin: 15px 0 15px 0;
 }
@@ -219,6 +216,7 @@ header {
   margin-top: 15px;
 }
 .btn-social:hover {
+  color: #c9a6ff;
   transform: scale(1.9);
 }
 .rotate {
@@ -228,6 +226,12 @@ header {
   right: 15px;
   top: 10px;
   cursor: pointer;
+}
+.rotate:hover {
+  color: var(--clr-teal);
+}
+.backCard .rotate:hover {
+  color: #c9a6ff;
 }
 .footer-wrapper {
   position: relative;
@@ -317,7 +321,12 @@ header {
 .open {
   display: block;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1420px) {
+  .flipCard {
+    flex: 1 0 48%;
+  }
+}
+@media screen and (max-width: 880px) {
   body {
     background: linear-gradient(1deg, #99ffea 0%, #512260 100%);
   }
@@ -353,6 +362,9 @@ header {
   }
   .infoBox-link {
     color: var(--clr-teal);
+  }
+  .flipCard {
+    min-width: 20rem;
   }
   .rotate {
     -webkit-transform: scale(2);

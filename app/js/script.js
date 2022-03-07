@@ -1,15 +1,22 @@
 let openModal = document.querySelector('#open-modal');
 let cards = document.querySelectorAll('.flipCard');
-
 let modalClosed = true;
 
 openModal.addEventListener('click', () => {
   let modal = document.querySelector('.modal');
+  let form = document.querySelector('#contact-form');
 
   if (modalClosed) {
     modal.classList.toggle('hidden');
     document.body.style.overflow = 'hidden';
+    form.previousElementSibling.innerHTML = `Entre em contato com a gente:`;
+    form.style.display = 'flex';
     modalClosed = false;
+
+    form.addEventListener('submit', () => {
+      form.previousElementSibling.innerHTML = `Obrigada! <br> Responderemos assim que possível 💛`;
+      form.style.display = 'none';
+    });
 
     modal.addEventListener('click', (e) => {
       if (e.target.classList.contains('close')) {
