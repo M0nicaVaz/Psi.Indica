@@ -4,7 +4,7 @@ let modalClosed = true;
 
 openModal.addEventListener('click', () => {
   let modal = document.querySelector('.modal');
-  let form = document.querySelector('#contact-form');
+  let form = document.querySelector('#mc-embedded-subscribe-form');
 
   if (modalClosed) {
     modal.classList.toggle('hidden');
