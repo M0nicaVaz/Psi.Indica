@@ -323,9 +323,11 @@ header {
   }
   h1 {
     font-size: 1.5rem;
+    margin-top: 5rem;
   }
   h2 {
     font-size: 1.4rem;
+    margin-top: 5rem;
   }
   input {
     padding: 9px;
@@ -347,6 +349,10 @@ header {
   .infoBox p {
     width: 80%;
     margin: auto;
+    color: white;
+  }
+  .infoBox-link {
+    color: var(--clr-teal);
   }
   .rotate {
     -webkit-transform: scale(2);
@@ -363,6 +369,7 @@ header {
   }
   .modal h2 {
     font-size: 18px;
+    margin-top: 1rem;
   }
   .input-area {
     width: 300px;
