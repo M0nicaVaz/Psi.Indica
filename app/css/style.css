@@ -52,7 +52,7 @@ header {
 .link {
   color: var(--clr-yellow);
 }
-.link:hover {
+ul li:hover {
   transform: translateY(-5px) translateX(-5px);
   transition: var(--btn-transition);
 }
