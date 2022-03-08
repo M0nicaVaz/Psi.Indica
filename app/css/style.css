@@ -295,6 +295,7 @@ header {
   }
   .logo {
     width: 220px;
+    margin-bottom: 120px;
   }
   .infoBox {
     width: 50vw;
@@ -328,5 +329,17 @@ header {
   }
   .contact {
     width: 80%;
+  }
+}
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+  .infoBox {
+    font-size: 14px;
+  }
+  .infoBox h1 {
+    font-size: 22px;
+    margin-top: 10vh;
+  }
+  .infoBox-link {
+    margin-bottom: 8vh;
   }
 }
