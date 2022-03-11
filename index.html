@@ -35,7 +35,9 @@
           <ul class="nav-links">
             <li><a class="link" href="#about">SOBRE</a></li>
             <li><a class="link" href="#staff">QUEM SOMOS</a></li>
-            <li><a class="link" href="#contact" id="open-modal">CONTATO</a></li>
+            <li>
+              <a class="link" href="#contact" id="contactBtn">CONTATO</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -59,8 +61,9 @@
             que seguimos dentro da psicologia. O importante aqui é abrir espaço
             para reflexões e diálogos significativos!
           </p>
-          <a href="https://Instagram.com/Psi.Indica" class="infoBox-link"
-            >Vem conferir os nossos posts!</a
+          <a class="infoBox-link" href="#project" id="projectBtn">
+            <i class="fa-solid fa-hand-point-right"></i> Me indica alguma
+            coisa!</a
           >
         </div>
       </div>
@@ -181,9 +184,28 @@
         </div>
       </section>
 
-      <div class="modal hidden">
+      <!-- project modal -->
+      <div id="project-modal" class="project-modal modal hidden">
+        <div class="contact container">
+          <i class="fa-regular fa-circle-xmark close project-close"></i>
+          <div class="choices-container">
+            <h2 class="page-subtitle">O que você gostaria de assistir?</h2>
+            <select name="choices" id="choices" class="select">
+              <option value="" id="" disabled selected>Escolha Aqui!</option>
+              <option value="movies" id="opt-movie">Filme</option>
+              <option value="series" id="opt-series">Série</option>
+              <option value="animes" id="opt-anime">Anime</option>
+              <option value="surprise" id="opt-surprise">Tanto Faz</option>
+            </select>
+          </div>
+          <div class="media-container" id="mediaContainer"></div>
+        </div>
+      </div>
+
+      <!-- contact modal -->
+      <div id="contact-modal" class="contact-modal modal hidden">
         <div id="contact" class="contact container">
-          <i class="fa-regular fa-circle-xmark close"></i>
+          <i class="fa-regular fa-circle-xmark close contact-close"></i>
 
           <!-- trypeform -->
           <div
@@ -201,6 +223,7 @@
     </div>
 
     <script src="//embed.typeform.com/next/embed.js"></script>
+    <script src="app/js/data.js"></script>
     <script src="app/js/script.js"></script>
   </body>
 </html>
