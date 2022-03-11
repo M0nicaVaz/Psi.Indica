@@ -76,7 +76,6 @@ function createCards(obj) {
   let post = document.createTextNode('Leia o nosso post!');
   btn.appendChild(post);
   btn.href = obj.postUrl;
-  btn.target = '_blank';
   card.appendChild(btn);
 }
 
