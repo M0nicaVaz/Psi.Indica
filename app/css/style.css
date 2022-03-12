@@ -15,7 +15,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--clr-teal);
@@ -27,6 +27,7 @@
 }
 html {
   scrollbar-color: var(--clr-main-purple) var(--clr-teal);
+  scrollbar-width: 6px;
 }
 body {
   background: linear-gradient(1deg, #99ffea 0%, #512260 100%);
@@ -315,16 +316,19 @@ ul li:hover {
   margin-top: 0;
 }
 .select {
-  width: 120px;
+  width: max-content;
   margin-top: 0;
   align-self: center;
-  text-align: center;
   padding: 10px;
   border-radius: 5px;
   background: var(--clr-main-purple);
   border: none;
   color: var(--clr-pink);
   z-index: 2000;
+}
+.select option {
+  font-size: 14px;
+  padding: 6px;
 }
 .media-container {
   position: relative;
@@ -343,13 +347,14 @@ ul li:hover {
 .media-card {
   display: flex;
   flex-wrap: wrap;
+  padding: 20px;
   flex-direction: column;
   margin: auto;
   border-radius: 10px;
   width: 15rem;
   min-width: calc(90% / 3);
   height: 26rem;
-  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
 }
 .media-card a {
   color: var(--clr-main-purple);
@@ -381,6 +386,9 @@ ul li:hover {
   }
 }
 @media screen and (max-width: 880px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
   body {
     background: linear-gradient(1deg, #99ffea 0%, #512260 100%);
   }

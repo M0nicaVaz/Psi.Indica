@@ -69,6 +69,7 @@ function createCards(obj) {
   let cardImg = document.createElement('img');
   cardImg.classList.add('card-img');
   cardImg.src = obj.imgSrc;
+  cardImg.alt = `${obj.title} ${obj.type}`;
   card.appendChild(cardImg);
 
   let btn = document.createElement('a');
