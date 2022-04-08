@@ -7,6 +7,20 @@ let selectChoice = document.querySelector('#choices');
 
 let modalClosed = true;
 
+(function generateStaffCards() {
+  for (var i = 0; i < staffCards.length; i++) {
+    staffCards[i].addEventListener('click', (e) => {
+      let flipCard = e.target.parentElement.parentElement;
+
+      if (e.target.classList.contains('frontR')) {
+        flipCard.style.transform = 'rotateY(180deg)';
+      } else if (e.target.classList.contains('backR')) {
+        flipCard.style.transform = 'rotateY(0deg)';
+      }
+    });
+  }
+})();
+
 openProjectModal.addEventListener('click', () => {
   let modal = document.querySelector('#project-modal');
 
@@ -43,21 +57,7 @@ openContactModal.addEventListener('click', () => {
   }
 });
 
-(function generateStaffCards() {
-  for (var i = 0; i < staffCards.length; i++) {
-    staffCards[i].addEventListener('click', (e) => {
-      let flipCard = e.target.parentElement.parentElement;
-
-      if (e.target.classList.contains('frontR')) {
-        flipCard.style.transform = 'rotateY(180deg)';
-      } else if (e.target.classList.contains('backR')) {
-        flipCard.style.transform = 'rotateY(0deg)';
-      }
-    });
-  }
-})();
-
-function createSingleCard(obj) {
+function createCards(obj) {
   let card = document.createElement('div');
   card.classList.add('media-card');
   container.appendChild(card);
@@ -70,27 +70,16 @@ function createSingleCard(obj) {
   let cardImg = document.createElement('img');
   cardImg.classList.add('card-img');
   cardImg.src = obj.imgSrc;
-  cardImg.alt = `${obj.title} ${obj.type}`;
+  cardImg.alt = `${obj.title} ${obj.type} cover`;
   card.appendChild(cardImg);
 
-  let btn = document.createElement('a');
-  btn.classList.add('btn');
+  let linkElement = document.createElement('a');
+  linkElement.classList.add('btn');
   let post = document.createTextNode('Leia o nosso post!');
-  btn.appendChild(post);
-  btn.href = obj.postUrl;
-  card.appendChild(btn);
-}
-
-function createRandomCard() {
-  let randomIndex = Math.floor(Math.random() * randomMedia.length);
-  let randomOption = randomMedia[randomIndex];
-  createSingleCard(randomOption);
-}
-
-function createMultipleCards(array) {
-  array.forEach((obj) => {
-    createSingleCard(obj);
-  });
+  linkElement.appendChild(post);
+  linkElement.href = obj.postUrl;
+  linkElement.target = '_blank';
+  card.appendChild(linkElement);
 }
 
 selectChoice.addEventListener('change', () => {
@@ -98,23 +87,39 @@ selectChoice.addEventListener('change', () => {
     container.removeChild(container.firstChild);
   }
 
+  const animeList = allMedia.filter((media) => media.type == 'anime');
+  const movieList = allMedia.filter((media) => media.type == 'movie');
+  const seriesList = allMedia.filter((media) => media.type == 'series');
+
   let chosen = selectChoice.value;
 
   switch (chosen) {
     case 'animes':
-      createMultipleCards(animeList);
+      animeList.forEach((obj) => {
+        createCards(obj);
+      });
+
       break;
 
     case 'movies':
-      createMultipleCards(moviesList);
+      movieList.forEach((obj) => {
+        createCards(obj);
+      });
+
       break;
 
     case 'series':
-      createMultipleCards(seriesList);
+      seriesList.forEach((obj) => {
+        createCards(obj);
+      });
+
       break;
 
     case 'random':
-      createRandomCard();
+      let randomIndex = Math.floor(Math.random() * allMedia.length);
+      let randomOption = allMedia[randomIndex];
+      createCards(randomOption);
+
       break;
   }
 });

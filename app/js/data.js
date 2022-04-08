@@ -1,63 +1,60 @@
-const seriesList = [
+const allMedia = [
   {
     title: 'Normal People',
     imgSrc: 'https://images-na.ssl-images-amazon.com/images/I/81l9ENSk5VL.jpg',
     postUrl: 'https://www.instagram.com/p/CTAv7EDNXg4/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'Arcane',
     imgSrc:
       'https://teoriageek.com.br/wp-content/uploads/2021/10/Arcane_2021_Logo.jpg',
     postUrl: 'https://www.instagram.com/p/CWl6o1zNmr0/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'Move to Heaven',
     imgSrc: 'https://i.mydramalist.com/Rle36_4c.jpg?v=1',
     postUrl: 'https://www.instagram.com/p/CUs5R7FNMmj/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'Modern Love',
     imgSrc: 'https://br.web.img2.acsta.net/pictures/19/09/13/07/22/4076331.jpg',
     postUrl: 'https://www.instagram.com/p/CSuuVibtXmF/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'This is Us',
     imgSrc: 'https://br.web.img3.acsta.net/pictures/17/09/27/19/21/2415587.jpg',
     postUrl: 'https://www.instagram.com/p/CScs0jeMz0a/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'Anne With an E',
     imgSrc: 'https://miro.medium.com/max/600/1*WwPFgrw9ZjW_eMtbztAoZg@2x.jpeg',
     postUrl: 'https://www.instagram.com/p/CR4psnRBb8-/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'Sex Education',
     imgSrc:
       'https://www.magazine-hd.com/apps/wp/wp-content/uploads/2020/01/sex_education_poster.jpg',
     postUrl: 'https://www.instagram.com/p/CSKrKexN0JX/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'Maid',
     imgSrc: 'https://flxt.tmsimg.com/assets/p20546908_b_v13_aa.jpg',
     postUrl: 'https://www.instagram.com/p/CVLyzNMgI9W/',
-    type: 'tv show',
+    type: 'series',
   },
   {
     title: 'Fleabag',
     imgSrc: 'https://br.web.img2.acsta.net/pictures/19/05/07/14/27/4051507.jpg',
     postUrl: 'https://www.instagram.com/p/CXPHVo2hG5n/',
-    type: 'tv show',
+    type: 'series',
   },
-];
-
-const animeList = [
   {
     title: 'Fruits Basket',
     imgSrc:
@@ -119,9 +116,6 @@ const animeList = [
     postUrl: 'https://www.instagram.com/p/CU-60rsjhYy/',
     type: 'anime',
   },
-];
-
-const moviesList = [
   {
     title: 'Capitão Fantastico',
     imgSrc:
@@ -185,5 +179,3 @@ const moviesList = [
     type: 'movie',
   },
 ];
-
-const randomMedia = [...seriesList, ...animeList, ...moviesList];
