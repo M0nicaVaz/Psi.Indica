@@ -9,7 +9,6 @@ let modalClosed = true;
 
 openProjectModal.addEventListener('click', () => {
   let modal = document.querySelector('#project-modal');
-  console.log('click');
 
   if (modalClosed) {
     modal.classList.toggle('hidden');
@@ -44,19 +43,21 @@ openContactModal.addEventListener('click', () => {
   }
 });
 
-for (var i = 0; i < staffCards.length; i++) {
-  staffCards[i].addEventListener('click', (e) => {
-    let flipCard = e.target.parentElement.parentElement;
+(function generateStaffCards() {
+  for (var i = 0; i < staffCards.length; i++) {
+    staffCards[i].addEventListener('click', (e) => {
+      let flipCard = e.target.parentElement.parentElement;
 
-    if (e.target.classList.contains('frontR')) {
-      flipCard.style.transform = 'rotateY(180deg)';
-    } else if (e.target.classList.contains('backR')) {
-      flipCard.style.transform = 'rotateY(0deg)';
-    }
-  });
-}
+      if (e.target.classList.contains('frontR')) {
+        flipCard.style.transform = 'rotateY(180deg)';
+      } else if (e.target.classList.contains('backR')) {
+        flipCard.style.transform = 'rotateY(0deg)';
+      }
+    });
+  }
+})();
 
-function createCards(obj) {
+function createSingleCard(obj) {
   let card = document.createElement('div');
   card.classList.add('media-card');
   container.appendChild(card);
@@ -80,12 +81,16 @@ function createCards(obj) {
   card.appendChild(btn);
 }
 
-function optionRandom() {
-  let chooseGenre = Math.floor(Math.random() * allMedia.length);
-  let randomGenre = allMedia[chooseGenre];
-  let randomChoice = Math.floor(Math.random() * randomGenre.length);
-  let surpriseCard = randomGenre[randomChoice];
-  createCards(surpriseCard);
+function createRandomCard() {
+  let randomIndex = Math.floor(Math.random() * randomMedia.length);
+  let randomOption = randomMedia[randomIndex];
+  createSingleCard(randomOption);
+}
+
+function createMultipleCards(array) {
+  array.forEach((obj) => {
+    createSingleCard(obj);
+  });
 }
 
 selectChoice.addEventListener('change', () => {
@@ -93,19 +98,23 @@ selectChoice.addEventListener('change', () => {
     container.removeChild(container.firstChild);
   }
 
-  if (selectChoice.value == 'animes') {
-    animeList.forEach((obj) => {
-      createCards(obj);
-    });
-  } else if (selectChoice.value == 'movies') {
-    moviesList.forEach((obj) => {
-      createCards(obj);
-    });
-  } else if (selectChoice.value == 'series') {
-    seriesList.forEach((obj) => {
-      createCards(obj);
-    });
-  } else {
-    optionRandom();
+  let chosen = selectChoice.value;
+
+  switch (chosen) {
+    case 'animes':
+      createMultipleCards(animeList);
+      break;
+
+    case 'movies':
+      createMultipleCards(moviesList);
+      break;
+
+    case 'series':
+      createMultipleCards(seriesList);
+      break;
+
+    case 'random':
+      createRandomCard();
+      break;
   }
 });
