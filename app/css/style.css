@@ -34,6 +34,7 @@ body {
   background-attachment: fixed;
   font-family: 'Zen Kaku Gothic Antique', monospace;
   overflow: auto;
+  width: 100vw;
 }
 ul {
   list-style: none;
@@ -107,16 +108,25 @@ ul li:hover {
   width: 320px;
 }
 .infoBox {
-  width: 50%;
-  font-size: 1em;
-  line-height: 2rem;
-  font-weight: 900;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-width: 420px;
   gap: 2rem;
   height: 50vh;
+}
+.infoBox-title {
+  font-size: 3rem;
+  line-height: 5rem;
+  font-weight: 900;
+}
+.infoBox-description {
+  font-size: 1rem;
+  text-align: center;
+
+  line-height: 2rem;
+  font-weight: 900;
 }
 .infoBox-link {
   color: var(--clr-main-purple);
@@ -131,6 +141,7 @@ ul li:hover {
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
+  width: 95vw;
 }
 .cards {
   position: relative;
@@ -385,17 +396,14 @@ ul li:hover {
     flex: 1 0 48%;
   }
 }
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1080px) {
   ::-webkit-scrollbar {
     width: 2px;
   }
   body {
     background: linear-gradient(1deg, #99ffea 0%, #512260 100%);
   }
-  h1 {
-    font-size: 1.5rem;
-    margin-top: 5rem;
-  }
+
   h2 {
     font-size: 1.4rem;
     margin-top: 5rem;
@@ -422,22 +430,22 @@ ul li:hover {
     margin-top: 5rem;
   }
   .logo {
-    width: 220px;
-    margin-bottom: 120px;
+    width: 280px;
   }
   .infoBox {
     width: 70vw;
+    height: max-content;
   }
-  .infoBox-link {
-    margin-bottom: 100px;
-  }
-  .infoBox p {
-    width: 80%;
-    margin: auto;
-    color: white;
+  .infoBox-title {
+    font-size: 2.5rem;
   }
   .infoBox-link {
     color: var(--clr-teal);
+  }
+  .infoBox-description {
+    width: 100%;
+    margin: auto;
+    color: white;
   }
   .media-card {
     flex: 1 0 48%;
@@ -470,7 +478,34 @@ ul li:hover {
     width: 80%;
   }
 }
-@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+
+@media screen and (max-width: 880px) {
+  .logo {
+    width: 220px;
+  }
+  .infoBox {
+    width: 100vw;
+    height: max-content;
+  }
+  .infoBox-description {
+    width: 80vw;
+    margin: auto;
+    color: white;
+    text-align: center;
+  }
+  .infoBox-title {
+    font-size: 2rem;
+    width: 100%;
+  }
+  .infoBox-link {
+    font-size: 1.1rem;
+  }
+  .staff-description {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+}
+@media only screen and (max-height: 580px) and (orientation: landscape) {
   .infoBox {
     font-size: 14px;
   }
