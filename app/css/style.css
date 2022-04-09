@@ -474,6 +474,9 @@ ul li:hover {
   .modal {
     flex-wrap: nowrap;
   }
+  .media-card {
+    min-width: 250px;
+  }
   .contact {
     width: 80%;
   }
