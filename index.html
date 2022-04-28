@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#512260" />
     <meta
@@ -16,10 +17,9 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="app/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400&family=Zen+Kurenaido&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;600&family=Zen+Kurenaido&display=swap"
       rel="stylesheet"
     />
     <script
@@ -31,31 +31,31 @@
   <body>
     <div class="page-wrapper">
       <nav>
-        <ul class="nav-links">
-          <li><a class="link" href="#about">SOBRE</a></li>
-          <li><a class="link" href="#staff">QUEM SOMOS</a></li>
-          <li>
-            <a class="link" href="#contact" id="contactBtn">CONTATO</a>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#about">SOBRE</a></li>
+          <li class="nav-item"><a href="#staff">QUEM SOMOS</a></li>
+          <li class="nav-item">
+            <a href="#contact" id="contactBtn">CONTATO</a>
           </li>
         </ul>
       </nav>
 
-      <div id="about" class="about container">
-        <a href="https://instagram.com/psi.indica"
-          ><img
-            src="./Imagens/logo.png"
-            alt="psi.indica logo"
-            class="logo"
-            target="_blank"
-        /></a>
-        <section class="infoBox">
-          <h1 class="infoBox-title">O que é o Psi Indica?</h1>
-          <p class="infoBox-description">
+      <div id="about" class="about-container">
+        <img
+          src="./Imagens/logo.png"
+          alt="psi.indica logo"
+          class="logo"
+          target="_blank"
+        />
+        <section class="about-text">
+          <h1>O que é o Psi Indica?</h1>
+
+          <p>
             O Psi Indica é um projeto voltado para o Instagram. Somos um grupo
             de <i>psis</i>, nos conhecemos durante a faculdade de psicologia e
             confiamos muito no trabalho um do outro. Tínhamos o costume de
             discutir sobre coisas que assistíamos e assim surgiu a ideia de
-            levar um pouco das nossas reflexões para outras pessoas.
+            levar um pouco das nossas reflexões para outras pessoas. <br />
             <br />
             Ah! É importante deixarmos claro que a psicologia é um mundo
             gigante! Não temos como opinar sobre algo que vimos em nome de todos
@@ -64,35 +64,32 @@
             abordagem que seguimos dentro da psicologia. O importante aqui é
             abrir espaço para reflexões e diálogos significativos!
           </p>
-          <a class="infoBox-link" href="#project" id="projectBtn">
-            <i class="fa-solid fa-hand-point-right"></i> Me indica alguma
-            coisa!</a
-          >
+
+          <button class="about-btn" href="#project" id="projectBtn">
+            Ok! Me indica alguma coisa!
+          </button>
         </section>
       </div>
 
-      <section id="staff" class="staff container">
+      <section id="staff" class="staff-container">
         <h2 class="staff-description">Quem Somos</h2>
 
-        <main id="about" class="cards container">
+        <main id="about" class="cards-wrapper">
           <div class="flipCard">
-            <div class="frontCard">
-              <i class="fa-solid fa-rotate rotate frontR"></i>
+            <div class="card-front card">
+              <i class="fa-solid fa-rotate rotate-btn frontR"></i>
               <h3>Danilo Xavier</h3>
-              <img
-                class="card-img"
-                src="/Imagens/danilo.jpeg"
-                alt="Foto de Danilo Xavier"
-              />
+              <img src="/Imagens/danilo.jpg" alt="Foto de Danilo Xavier" />
               <span> CRP 03/13743</span>
-              <p class="front description">
+              <p>
                 Psicólogo Clínico, Supervisor e Analista do Comportamento.
                 Entusiasta de questões sobre Masculinidade saudável.
               </p>
             </div>
-            <div class="backCard">
-              <i class="fa-solid fa-rotate rotate backR"></i>
-              <p class="back description">
+
+            <div class="card-back card">
+              <i class="fa-solid fa-rotate rotate-btn backR"></i>
+              <p>
                 "Acredito que terapia é um espaço de mudança e estou disposto a
                 estar com você nesse processo! Trilhei o caminho Nerd da força.
                 Amo vídeo games, animes e etc. e sou grato pelo que me
@@ -105,24 +102,20 @@
           </div>
 
           <div class="flipCard">
-            <div class="frontCard">
-              <i class="fa-solid fa-rotate rotate frontR"></i>
+            <div class="card-front card">
+              <i class="fa-solid fa-rotate rotate-btn frontR"></i>
               <h3>Emanoela Dantas</h3>
-              <img
-                class="card-img"
-                src="/Imagens/Emanoela.PNG"
-                alt="Foto de Emanoela Dantas"
-              />
+              <img src="/Imagens/Emanoela.jpg" alt="Foto de Emanoela Dantas" />
               <span> CRP 03/13803</span>
-              <p class="front description">
+              <p>
                 Psicóloga Clínica, Especialista em Saúde Mental e Analista do
                 Comportamento.
               </p>
             </div>
 
-            <div class="backCard">
-              <i class="fa-solid fa-rotate rotate backR"></i>
-              <p class="back description">
+            <div class="card-back card">
+              <i class="fa-solid fa-rotate rotate-btn backR"></i>
+              <p>
                 "Me descobri uma mulher mais forte e decidida junto com a
                 profissional que fui nome tornando. Me orgulho disso. Amo séries
                 e filmes leves que me distraiam, animações tem um espaço no meu
@@ -135,31 +128,26 @@
           </div>
 
           <div class="flipCard">
-            <div class="frontCard">
-              <i class="fa-solid fa-rotate rotate frontR"></i>
+            <div class="card-front card">
+              <i class="fa-solid fa-rotate rotate-btn frontR"></i>
               <h3>Monica Vaz</h3>
-              <img
-                class="card-img"
-                src="/Imagens/Monica.jpg"
-                alt="Foto de Monica Vaz"
-              />
+              <img src="/Imagens/Monica.jpg" alt="Foto de Monica Vaz" />
               <span> CRP 03/13741</span>
-              <p class="front description">
+              <p>
                 Psicóloga Clínica, Especialista em Terapia
                 Analítico-Comportamental e Estudante de Programação.
               </p>
             </div>
-            <div class="backCard">
-              <i class="fa-solid fa-rotate rotate backR"></i>
-              <p class="back description">
+
+            <div class="card-back card">
+              <i class="fa-solid fa-rotate rotate-btn backR"></i>
+              <p>
                 "No pouco tempo livre que tenho, eu jogo uns joguinhos, vejo
                 animes, leio uns mangás e depois que aquela série famosa já
                 perdeu todo o hype e eu já levei todos os spoilers possíveis, eu
                 decido assistir também."
               </p>
-              <a href="https://instagram.com/whosmonica/"
-                ><i class="fa-brands fa-instagram btn-social"></i
-              ></a>
+
               <a href="https://wa.me/message/L7CP3XQCEEP5K1"
                 ><i class="fa-brands fa-whatsapp btn-social"></i
               ></a>
@@ -167,23 +155,20 @@
           </div>
 
           <div class="flipCard">
-            <div class="frontCard">
-              <i class="fa-solid fa-rotate rotate frontR"></i>
+            <div class="card-front card">
+              <i class="fa-solid fa-rotate rotate-btn frontR"></i>
               <h3>Monise Carvalho</h3>
-              <img
-                class="card-img"
-                src="/Imagens/Monise.PNG"
-                alt="Foto de Monise Carvalho"
-              />
+              <img src="/Imagens/Monise.jpg" alt="Foto de Monise Carvalho" />
               <span> CRP 03/1370</span>
-              <p class="front description">
+              <p>
                 Psicóloga Clínica, Especialista em Saúde Mental e Analista do
                 Comportamento.
               </p>
             </div>
-            <div class="backCard">
-              <i class="fa-solid fa-rotate rotate backR"></i>
-              <p class="back description">
+
+            <div class="card-back card">
+              <i class="fa-solid fa-rotate rotate-btn backR"></i>
+              <p>
                 "Acolhendo dores, abrindo espaço para a vulnerabilidade e
                 ajudando você a construir um caminho que te proporcione uma vida
                 mais valorosa. Nas horas vagas mimo meus gatos, assisto um bom
@@ -195,17 +180,13 @@
               <a href="https://www.instagram.com/psimonisecarvalho/"
                 ><i class="fa-brands fa-instagram btn-social"></i
               ></a>
-              <a href="https://api.whatsapp.com/send?phone=71997146293&text="
-                ><i class="fa-brands fa-whatsapp btn-social"></i
-              ></a>
             </div>
           </div>
         </main>
       </section>
 
-      <!-- project modal -->
-      <div id="project-modal" class="project-modal modal hidden">
-        <div class="contact container">
+      <div id="project-modal" class="project-wrapper modal hidden">
+        <div class="contact-container">
           <i class="fa-regular fa-circle-xmark close project-close"></i>
           <div class="choices-container">
             <h2 class="page-subtitle">O que você gostaria de assistir?</h2>
@@ -221,26 +202,24 @@
         </div>
       </div>
 
-      <!-- contact modal -->
-      <div id="contact-modal" class="contact-modal modal hidden">
+      <div id="contact-modal" class="contact-wrapper modal hidden">
         <div id="contact" class="contact container">
-          <i class="fa-regular fa-circle-xmark close contact-close"></i>
+          <i class="fa-regular fa-circle-xmark close"></i>
 
           <!-- trypeform -->
           <div
             data-tf-widget="uZycvrYP"
             data-tf-iframe-props="title=Psi Indica"
             data-tf-medium="snippet"
-            style="width: 90%; height: 400px"
+            class="typeform"
           ></div>
         </div>
       </div>
-
-      <footer class="footer-wrapper">
-        <a href="https://github.com/M0nicaVaz">Desenvolvido por Monica Vaz</a>
-      </footer>
     </div>
 
+    <footer>
+      <a href="https://github.com/M0nicaVaz">Desenvolvido por Monica Vaz</a>
+    </footer>
     <script src="//embed.typeform.com/next/embed.js"></script>
     <script src="app/js/data.js"></script>
     <script src="app/js/script.js"></script>
