@@ -35,6 +35,7 @@ body {
   font-family: 'Zen Kaku Gothic Antique', monospace;
   overflow: auto;
   width: 100vw;
+  text-align: center;
 }
 ul {
   list-style: none;
@@ -58,6 +59,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  width: 98vw;
 }
 .nav-links {
   margin-top: 18px;
@@ -137,6 +139,7 @@ ul li:hover {
   transform: scale(1.05);
 }
 .staff {
+  align-self: center;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -144,6 +147,7 @@ ul li:hover {
   width: 95vw;
 }
 .cards {
+  align-self: center;
   position: relative;
   line-height: 1.7rem;
   padding: 2rem;
@@ -251,7 +255,7 @@ ul li:hover {
   position: relative;
   bottom: 0;
   background-color: #f1f1f12d;
-  width: 100%;
+  width: 100vw;
   text-align: center;
 }
 .footer-wrapper a {
